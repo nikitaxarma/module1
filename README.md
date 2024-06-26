@@ -1,14 +1,15 @@
-# MyToken
-MyToken is a custom ERC20 token implemented using Solidity.
+
+
+#MyToken
+#Overview
+MyToken is an ERC20 token with minting and burning capabilities.
 
 #Features
-#Minting: Only the contract owner can mint new tokens.
-#Burning: Any user can burn their own tokens.
-#Transfers: Standard ERC20 token transfers are supported.
-#Deployment
-#Deploy the contract on the Ethereum network or any compatible blockchain. The contract owner can mint new tokens, while all users can transfer and burn their tokens.
+Minting: Only the owner can mint new tokens.
+Burning: Users can burn their own tokens.
+Transfer: Standard ERC20 transfer functionality.
 
-#Usage
-#Minting: mint(address to, uint256 amount) - Only the owner can call this function to mint tokens.
-#Burning: burn(uint256 amount) - Any user can burn their own tokens.
-#Transfers: Use the standard ERC20 transfer function to transfer tokens between addresses.
+#Functions
+mint(address to, uint256 amount) - Mints tokens to an address (owner only).
+burn(uint256 amount) - Burns tokens from the caller's balance.
+transfer(address recipient, uint256 amount) - Transfers tokens to a recipient.
