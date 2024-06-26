@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyToken is ERC20, Ownable {
 
-    constructor() ERC20("MyToken", "MTK") Ownable(msg.sender) {}
+    constructor() ERC20("MyToken", "MTK") Ownable() {}
 
     // Function to mint tokens
     function mint(address to, uint256 amount) public onlyOwner {
@@ -18,6 +18,11 @@ contract MyToken is ERC20, Ownable {
         _burn(msg.sender, amount);
     }
 
-    // Transfer function is already part of the ERC20 standard
+    // Override the transfer function to add custom logic
+    function transfer(address recipient, uint256 amount) public override returns (bool) {
+        // Add any custom logic here
+
+        // Call the parent contract's transfer function
+        return super.transfer(recipient, amount);
+    }
 }
-//0x583031D1113aD414F02576BD6afaBfb302140225
